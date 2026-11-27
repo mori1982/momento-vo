@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seleção do novo síndico · Condomínio Momento Vila Olímpia</title>
+<meta name="description" content="Acompanhe a seleção do novo síndico profissional do Condomínio Momento Vila Olímpia: etapas, lista de candidatos e como participar. A escolha final é dos condôminos, em assembleia.">
+<meta name="theme-color" content="#1C2840">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=no">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://momento-vo.com.br/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Momento Vila Olímpia">
+<meta property="og:url" content="https://momento-vo.com.br/">
+<meta property="og:title" content="Seleção do novo síndico · Momento Vila Olímpia">
+<meta property="og:description" content="Etapas, lista de candidatos e como enviar sugestões ou indicações. Iniciativa de moradores do Condomínio Momento Vila Olímpia.">
+<meta property="og:image" content="https://momento-vo.com.br/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Seleção do novo síndico profissional do Condomínio Momento Vila Olímpia">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Seleção do novo síndico · Momento Vila Olímpia">
+<meta name="twitter:description" content="Etapas, lista de candidatos e como participar. A escolha final é dos condôminos, em assembleia.">
+<meta name="twitter:image" content="https://momento-vo.com.br/og-image.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<a class="pula" href="#inicio">Ir para o conteúdo</a>
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="#inicio"><b>Momento Vila Olímpia</b><small>Seleção do síndico</small></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Seções">
+      <a href="#etapas">Etapas</a>
+      <a href="#candidatos">Candidatos</a>
+      <a href="#sugestoes">Sugestões</a>
+      <a href="#indicacao">Indicar síndico</a>
+      <a href="#documentos">Documentos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero escuro">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Transparência · São Paulo</p>
+        <p class="cond">Condomínio Momento Vila Olímpia</p>
+        <p class="endereco">Av. Dr. Cardoso de Melo, 585, São Paulo</p>
+        <h1>Seleção do novo síndico profissional</h1>
+        <p class="txt">O corpo diretivo atual renunciou e fica até 30/01/2027. Um grupo de moradores voluntários apoia o corpo diretivo na seleção do novo síndico profissional, com critérios e pesos definidos e transparentes. A escolha final é dos condôminos, em assembleia geral extraordinária (AGE).</p>
+        <div class="acoes">
+          <a class="btn btn-pri" href="#candidatos">Ver os candidatos</a>
+          <a class="btn btn-sec" href="#sugestoes">Enviar sugestão</a>
+        </div>
+      </div>
+      <div>
+        <dl class="conduz">
+          <dt>Quem conduz</dt>
+          <dd>Moradores voluntários, em apoio ao corpo diretivo.</dd>
+          <dt>Decisão final</dt>
+          <dd>Os condôminos, em assembleia geral extraordinária (AGE).</dd>
+        </dl>
+        <div class="numeros">
+          <div><b id="n-candidatos">…</b><span>candidatos</span></div>
+          <div><b>112</b><span>unidades</span></div>
+          <div><b>2</b><span>torres</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="etapas" class="sec-branca">
+    <div class="wrap">
+      <p class="eyebrow">Etapas e cronograma</p>
+      <div class="regua"></div>
+      <h2>Como a seleção avança</h2>
+      <p class="atualizado">Atualizado em <time id="atualizado-etapas">…</time></p>
+      <p class="nota">Datas previstas, sujeitas a ajuste.</p>
+      <ol class="timeline" id="timeline"></ol>
+      <p class="erro-dados" id="erro-etapas" hidden>Não foi possível carregar o cronograma. Atualize a página.</p>
+    </div>
+  </section>
+
+  <section id="candidatos">
+    <div class="wrap">
+      <p class="eyebrow">Candidatos</p>
+      <div class="regua"></div>
+      <h2>Empresas e síndicos no levantamento</h2>
+      <p class="lead">Lista de empresas e síndicos em avaliação. Estar na lista não significa indicação ou aprovação.</p>
+      <p class="sub">Só constam o nome, o site e a rede social.</p>
+      <div class="filtros">
+        <div class="busca">
+          <label for="q">Buscar por nome</label>
+          <input id="q" type="search" placeholder="Ex.: Condominial" autocomplete="off" enterkeyhint="search">
+        </div>
+      </div>
+      <p class="contagem" id="contagem" aria-live="polite">Carregando…</p>
+      <div class="tabela" id="tabela">
+        <div class="lista-cab" aria-hidden="true"><span>Nº</span><span>Nome</span><span>Site e redes</span></div>
+        <ul class="lista" id="lista"></ul>
+      </div>
+      <p class="vazio" id="vazio" hidden>Nenhum nome encontrado. Tente outra busca.</p>
+      <p class="erro-dados" id="erro-candidatos" hidden>Não foi possível carregar a lista. Atualize a página.</p>
+    </div>
+  </section>
+
+  <section id="sugestoes" class="sec-branca">
+    <div class="wrap form-grid">
+      <div class="form-intro">
+        <p class="eyebrow">Sugestões</p>
+        <div class="regua"></div>
+        <h2>Sua opinião sobre a seleção</h2>
+        <p>Dúvidas, pontos que devem ser avaliados ou qualquer sugestão sobre o processo.</p>
+      </div>
+      <div class="painel" id="painel-sugestoes">
+        <p class="carregando">Carregando…</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="indicacao">
+    <div class="wrap form-grid">
+      <div class="form-intro">
+        <p class="eyebrow">Indicação</p>
+        <div class="regua"></div>
+        <h2>Indique um síndico profissional</h2>
+        <p>Conhece uma empresa ou um síndico profissional que deveria entrar no levantamento? A indicação não significa aprovação.</p>
+      </div>
+      <div class="painel" id="painel-indicacao">
+        <p class="carregando">Carregando…</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="documentos" class="sec-branca">
+    <div class="wrap">
+      <p class="eyebrow">Documentos</p>
+      <div class="regua"></div>
+      <h2>Documentos da seleção</h2>
+      <p class="vazio" id="docs-vazio">Documentos serão publicados aqui após aprovação.</p>
+      <div class="docs" id="docs"></div>
+    </div>
+  </section>
+
+  <section id="contato" class="contato escuro">
+    <div class="wrap cont-grid">
+      <div>
+        <p class="eyebrow">Contato</p>
+        <div class="regua"></div>
+        <h2 id="contato-titulo">Fale com o Mori</h2>
+        <p id="contato-texto">Dúvidas sobre a seleção podem ser enviadas diretamente.</p>
+        <div class="acoes" id="contato-acoes"></div>
+      </div>
+      <dl class="cont-linhas" id="contato-dados"></dl>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div>
+      <b>Momento Vila Olímpia</b>
+      <p>Seleção do novo síndico profissional · momento-vo.com.br</p>
+      <p>Iniciativa de moradores. Site independente, sem vínculo com a administradora ou a construtora.</p>
+    </div>
+    <div class="rodape-lado">
+      <p>Atualizado em <time id="atualizado-rodape">…</time></p>
+      <a href="#inicio">Voltar ao topo</a>
+    </div>
+  </div>
+</footer>
+<noscript>
+  <p class="noscript">Ative o JavaScript para carregar o cronograma, a lista e os formulários. O site não usa rastreadores nem cookies.</p>
+</noscript>
+<script src="site.js"></script>
+</body>
+</html>

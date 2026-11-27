@@ -1,0 +1,83 @@
+{
+  "atualizado": "27/11/2026",
+  "etapas": [
+    {
+      "etapa": "Levantamento de candidatos",
+      "data": "27/11/2026",
+      "status": "em andamento",
+      "obs": "31 empresas e síndicos listados (propostas recebidas, pesquisa e indicações)"
+    },
+    {
+      "etapa": "Aprovação do questionário pela comissão",
+      "data": "até 30/11/2026",
+      "status": "em andamento",
+      "obs": ""
+    },
+    {
+      "etapa": "Envio do questionário às empresas",
+      "data": "01/12/2026",
+      "status": "previsto",
+      "obs": ""
+    },
+    {
+      "etapa": "Prazo para dúvidas das empresas",
+      "data": "04/12/2026",
+      "status": "previsto",
+      "obs": ""
+    },
+    {
+      "etapa": "Prazo de respostas",
+      "data": "11/12/2026",
+      "status": "previsto",
+      "obs": ""
+    },
+    {
+      "etapa": "Triagem pelos critérios eliminatórios",
+      "data": "14/12/2026",
+      "status": "previsto",
+      "obs": ""
+    },
+    {
+      "etapa": "Avaliação independente pelos voluntários",
+      "data": "17/12/2026",
+      "status": "previsto",
+      "obs": ""
+    },
+    {
+      "etapa": "Checagem de referências e pré-seleção (até 8)",
+      "data": "18/12/2026",
+      "status": "previsto",
+      "obs": ""
+    },
+    {
+      "etapa": "Entrevistas",
+      "data": "21/12/2026 a 05/01/2027",
+      "status": "previsto",
+      "obs": ""
+    },
+    {
+      "etapa": "Definição de 2 ou 3 finalistas",
+      "data": "06/01/2027",
+      "status": "previsto",
+      "obs": ""
+    },
+    {
+      "etapa": "Edital de convocação da AGE",
+      "data": "08/01/2027",
+      "status": "previsto",
+      "obs": ""
+    },
+    {
+      "etapa": "AGE de eleição",
+      "data": "16/01/2027",
+      "status": "previsto",
+      "obs": ""
+    },
+    {
+      "etapa": "Posse do novo síndico",
+      "data": "31/01/2027",
+      "status": "previsto",
+      "obs": ""
+    }
+  ]
+}
