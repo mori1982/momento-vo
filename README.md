@@ -110,7 +110,7 @@ Quando houver arquivo público (por exemplo um PDF no próprio repositório ou u
 "documentos": [
   {
     "titulo": "Critérios de avaliação",
-    "url": "https://momento-vo.com.br/docs/criterios.pdf"
+    "url": "https://sindico.momento-vo.com.br/docs/criterios.pdf"
   }
 ]
 ```
@@ -152,4 +152,4 @@ Crie estes registros:
 
 O CNAME de `www` é só `mori1982.github.io`, sem `https://` e sem `/momento-vo`.
 
-A propagação pode levar algumas horas. Quando `https://momento-vo.com.br` abrir, volte em **Settings → Pages** e marque **Enforce HTTPS**.
+A propagação pode levar algumas horas. Quando `https://sindico.momento-vo.com.br` abrir, volte em **Settings → Pages** e marque **Enforce HTTPS**.
