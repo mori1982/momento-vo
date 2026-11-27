@@ -1,0 +1,271 @@
+[
+  {
+    "n": 1,
+    "nome": "REV Apoio Administrativo Ltda",
+    "site": "https://revgestao.com.br",
+    "redes": []
+  },
+  {
+    "n": 2,
+    "nome": "A2EPP (Adriano Ambrosino EPP)",
+    "site": "https://a2epp.com.br",
+    "redes": []
+  },
+  {
+    "n": 3,
+    "nome": "Aura Gestão Condominial",
+    "site": "https://auragestao.com.br",
+    "redes": [
+      {
+        "tipo": "instagram",
+        "url": "https://instagram.com/auragestao"
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "nome": "ADM Síndico e Gestão Condominial Ltda",
+    "site": "https://admsindico.com",
+    "redes": []
+  },
+  {
+    "n": 5,
+    "nome": "Advanced Governança Condominial (Síndico Advanced)",
+    "site": "https://sindicoadvanced.com.br",
+    "redes": [
+      {
+        "tipo": "instagram",
+        "url": "https://instagram.com/sindicoadvanced_"
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "nome": "NewCondo",
+    "site": "https://newcondo.com.br",
+    "redes": [
+      {
+        "tipo": "instagram",
+        "url": "https://instagram.com/newcondo.com.br"
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "nome": "Vivai Gestão e Facilities",
+    "site": "https://vivaigestao.com.br",
+    "redes": []
+  },
+  {
+    "n": 8,
+    "nome": "D'Accord Síndicos Profissionais",
+    "site": "https://daccordsindicos.com.br",
+    "redes": [
+      {
+        "tipo": "instagram",
+        "url": "https://instagram.com/daccordsindicos"
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "nome": "Vieira Souto Síndicos",
+    "site": "https://vieirasoutosindicos.com.br",
+    "redes": []
+  },
+  {
+    "n": 10,
+    "nome": "SAG Condominial",
+    "site": "https://sagcondominial.com.br",
+    "redes": [
+      {
+        "tipo": "instagram",
+        "url": "https://instagram.com/sagcondominial"
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "nome": "SíndicoTec",
+    "site": "https://sindicotec.com",
+    "redes": [
+      {
+        "tipo": "instagram",
+        "url": "https://instagram.com/sindicotec"
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "nome": "Padrão Condominial",
+    "site": "https://padraocondominial.com.br",
+    "redes": [
+      {
+        "tipo": "instagram",
+        "url": "https://instagram.com/padrao_cond"
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "nome": "Sindicância Profissional",
+    "site": "https://sindicanciaprofissional.com.br",
+    "redes": []
+  },
+  {
+    "n": 14,
+    "nome": "Fernando Pereira – Síndico Profissional",
+    "site": "https://fernandosindico.com",
+    "redes": []
+  },
+  {
+    "n": 15,
+    "nome": "Síndico Gestão Profissional",
+    "site": "https://sindicogestaoprofissional.com",
+    "redes": []
+  },
+  {
+    "n": 16,
+    "nome": "Alta Síndicos Profissionais (São Paulo)",
+    "site": "",
+    "redes": []
+  },
+  {
+    "n": 17,
+    "nome": "EMET Síndicos Profissionais",
+    "site": "https://emetcondominios.com.br",
+    "redes": [
+      {
+        "tipo": "instagram",
+        "url": "https://instagram.com/emetcondominios"
+      }
+    ]
+  },
+  {
+    "n": 18,
+    "nome": "DSP Gestão Profissional",
+    "site": "https://dspsindicoprofissional.com.br",
+    "redes": []
+  },
+  {
+    "n": 19,
+    "nome": "i3G Síndicos Profissionais",
+    "site": "https://i3g.com.br/site/sindico-profissional",
+    "redes": [
+      {
+        "tipo": "instagram",
+        "url": "https://instagram.com/i3Goficial"
+      },
+      {
+        "tipo": "linkedin",
+        "url": "https://www.linkedin.com/company/instituto-3g"
+      }
+    ]
+  },
+  {
+    "n": 20,
+    "nome": "Condovalor (B & B Síndicos Profissionais)",
+    "site": "https://condovalor.com.br",
+    "redes": []
+  },
+  {
+    "n": 21,
+    "nome": "Atalaia Sindicatura",
+    "site": "https://atalaiasindicatura.com.br",
+    "redes": [
+      {
+        "tipo": "instagram",
+        "url": "https://instagram.com/sindicoantoniocarlosboucault"
+      }
+    ]
+  },
+  {
+    "n": 22,
+    "nome": "Cropanizzo Síndico Profissional",
+    "site": "https://cropanizzo.com.br",
+    "redes": []
+  },
+  {
+    "n": 23,
+    "nome": "Bom Síndico",
+    "site": "https://bomsindico.com.br",
+    "redes": []
+  },
+  {
+    "n": 24,
+    "nome": "NS Assessoria (sindicoprofissional.com)",
+    "site": "https://sindicoprofissional.com",
+    "redes": [
+      {
+        "tipo": "linkedin",
+        "url": "https://www.linkedin.com/company/sindicoprofissional"
+      }
+    ]
+  },
+  {
+    "n": 25,
+    "nome": "Flávio Pierobon / FGP Sindicância Profissional",
+    "site": "https://flaviopierobon.com.br",
+    "redes": [
+      {
+        "tipo": "linkedin",
+        "url": "https://www.linkedin.com/in/fpierobon"
+      },
+      {
+        "tipo": "linkedin",
+        "url": "https://www.linkedin.com/company/fgpsindicoprofissional"
+      }
+    ]
+  },
+  {
+    "n": 26,
+    "nome": "4 Delta Síndica Profissional",
+    "site": "https://4deltasindica.com.br",
+    "redes": [
+      {
+        "tipo": "instagram",
+        "url": "https://instagram.com/sindica_marisapolichuk"
+      }
+    ]
+  },
+  {
+    "n": 27,
+    "nome": "Nahas Torres Síndicos Profissionais",
+    "site": "",
+    "redes": [
+      {
+        "tipo": "linkedin",
+        "url": "https://www.linkedin.com/in/patricia-nahas-bbbb6a28"
+      }
+    ]
+  },
+  {
+    "n": 28,
+    "nome": "Trustee Síndicos Profissionais",
+    "site": "https://trusteesindicos.com.br",
+    "redes": []
+  },
+  {
+    "n": 29,
+    "nome": "Lightman Assessores",
+    "site": "https://lightman.com.br",
+    "redes": []
+  },
+  {
+    "n": 30,
+    "nome": "CL Síndicos",
+    "site": "https://clsindicos.com.br",
+    "redes": []
+  },
+  {
+    "n": 31,
+    "nome": "IR Síndico Profissional",
+    "site": "https://irsindico.com.br",
+    "redes": [
+      {
+        "tipo": "instagram",
+        "url": "https://instagram.com/igorrascovsky"
+      }
+    ]
+  }
+]
