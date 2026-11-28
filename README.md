@@ -101,7 +101,7 @@ No mesmo `data/config.json`, o campo `documentos` lista os arquivos públicos. A
 ```json
 "documentos": [
   {
-    "titulo": "Questionário de seleção (minuta em aprovação)",
+    "titulo": "Questionário de pré-seleção dos síndicos (minuta em aprovação)",
     "url": "docs/questionario-selecao-sindico.pdf",
     "texto": "Quem quiser propor perguntas pode usar o formulário de sugestões."
   }
@@ -110,11 +110,11 @@ No mesmo `data/config.json`, o campo `documentos` lista os arquivos públicos. A
 
 ### Contato
 
-Também em `data/config.json`, no objeto `contato`: `nome` (use **Gustavo Mori**), `unidade`, `whatsapp` (texto), `whatsappUrl` (link `https://wa.me/...`) e `email`. O nome no site é um link para o WhatsApp.
+Também em `data/config.json`, no objeto `contato`: `nome` (use **Gustavo Mori**), `unidade`, `whatsapp` (texto) e `whatsappUrl` (link `https://wa.me/...`). O nome no site é um link para o WhatsApp. Não publique e-mail no site.
 
 ### Grupo de voluntários
 
-Arquivo: `data/voluntarios.json`. Cada pessoa tem `nome`, `apto` e, se houver, `papel`. Só quem tiver contato público leva `whatsapp`, `whatsappUrl` e `email`.
+Arquivo: `data/voluntarios.json`. Cada pessoa tem `nome`, `apto` e, se houver, `papel`. Só quem tiver contato público leva `whatsapp` e `whatsappUrl`. A mesma lista aparece no box **Quem conduz** da abertura. Não inclua e-mail.
 
 ## Publicar no GitHub Pages
 

@@ -47,10 +47,6 @@
     return typeof url === "string" && /^https:\/\/\S+$/i.test(url.trim());
   }
 
-  function emailOk(email) {
-    return typeof email === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
-  }
-
   function dois(n) {
     var s = String(n);
     return s.length < 2 ? "0" + s : s;
@@ -213,8 +209,46 @@
     btn.setAttribute("href", url.trim());
   }
 
+  function metaPessoa(v) {
+    var partes = [];
+    if (v.apto) partes.push("apto " + v.apto);
+    if (v.papel) partes.push(v.papel);
+    return partes.join(", ");
+  }
+
+  function renderListaConduz(lista) {
+    var ul = document.getElementById("lista-conduz");
+    if (!ul) return;
+    ul.textContent = "";
+    lista.forEach(function (v) {
+      if (!v || !v.nome) return;
+      var li = el("li");
+      if (httpsOk(v.whatsappUrl)) {
+        li.appendChild(el("a", {
+          href: v.whatsappUrl.trim(),
+          target: "_blank",
+          rel: "noopener noreferrer"
+        }, v.nome));
+      } else {
+        li.appendChild(document.createTextNode(v.nome));
+      }
+      var meta = metaPessoa(v);
+      if (meta) li.appendChild(document.createTextNode(", " + meta));
+      if (v.whatsapp && httpsOk(v.whatsappUrl)) {
+        li.appendChild(document.createTextNode(", "));
+        li.appendChild(el("a", {
+          href: v.whatsappUrl.trim(),
+          target: "_blank",
+          rel: "noopener noreferrer"
+        }, v.whatsapp));
+      }
+      ul.appendChild(li);
+    });
+  }
+
   function renderVoluntarios(dados) {
     var lista = Array.isArray(dados) ? dados : (dados && dados.voluntarios) || [];
+    renderListaConduz(lista);
     var ul = document.getElementById("vol-lista");
     if (!ul) return;
     ul.textContent = "";
@@ -237,22 +271,15 @@
       if (v.papel) topo.appendChild(el("span", { class: "vol-papel" }, v.papel));
       li.appendChild(topo);
       if (v.apto) li.appendChild(el("p", { class: "vol-apto" }, "apto " + v.apto));
-      var contatos = el("p", { class: "vol-contatos" });
-      var temContato = false;
       if (v.whatsapp && httpsOk(v.whatsappUrl)) {
-        temContato = true;
+        var contatos = el("p", { class: "vol-contatos" });
         contatos.appendChild(el("a", {
           href: v.whatsappUrl.trim(),
           target: "_blank",
           rel: "noopener noreferrer"
         }, v.whatsapp));
+        li.appendChild(contatos);
       }
-      if (emailOk(v.email)) {
-        if (temContato) contatos.appendChild(document.createTextNode(" · "));
-        temContato = true;
-        contatos.appendChild(el("a", { href: "mailto:" + v.email.trim() }, v.email.trim()));
-      }
-      if (temContato) li.appendChild(contatos);
       ul.appendChild(li);
     });
   }
@@ -281,7 +308,7 @@
       link.appendChild(el("span", { class: "doc-ico", "aria-hidden": "true" }, ext));
       var bloco = el("div");
       bloco.appendChild(el("h3", null, doc.titulo));
-      bloco.appendChild(el("span", { class: "doc-acao" }, "Abrir documento"));
+      bloco.appendChild(el("span", { class: "doc-acao" }, ext === "PDF" ? "Abrir PDF" : "Abrir documento"));
       link.appendChild(bloco);
       caixa.appendChild(link);
     });
@@ -316,13 +343,6 @@
         rel: "noopener noreferrer"
       }, "Conversar no WhatsApp"));
     }
-    if (emailOk(contato.email)) {
-      acoes.appendChild(el("a", {
-        class: "btn btn-sec",
-        href: "mailto:" + contato.email.trim()
-      }, "Enviar e-mail"));
-    }
-
     function linha(rotulo, valor, href) {
       if (!valor) return;
       var grupo = el("div");
@@ -336,9 +356,6 @@
 
     if (httpsOk(contato.whatsappUrl)) {
       linha("WhatsApp", contato.whatsapp || contato.whatsappUrl, contato.whatsappUrl.trim());
-    }
-    if (emailOk(contato.email)) {
-      linha("E-mail", contato.email.trim(), "mailto:" + contato.email.trim());
     }
     linha("Unidade", contato.unidade || "", "");
   }
