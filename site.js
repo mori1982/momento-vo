@@ -201,78 +201,73 @@
     filtrar();
   }
 
-  function montarFormulario(id, url, embed, rotulo, tituloFrame) {
-    var painel = document.getElementById(id);
-    painel.textContent = "";
-    var acoes = el("div", { class: "acoes" });
-    if (httpsOk(url)) {
-      var link = el("a", {
-        class: "btn btn-pri",
-        href: url.trim(),
-        target: "_blank",
-        rel: "noopener noreferrer"
-      }, rotulo);
-      acoes.appendChild(link);
-    } else {
-      var desativado = el("button", { class: "btn btn-pri", type: "button" }, "em breve");
-      desativado.disabled = true;
-      acoes.appendChild(desativado);
-    }
-    painel.appendChild(acoes);
-    if (httpsOk(embed)) {
-      painel.appendChild(el("p", { class: "embed-nota" }, "O botão abre o formulário do Google. Abaixo, a mesma página incorporada."));
-      var frame = el("iframe", {
-        class: "embed",
-        title: tituloFrame
-      });
-      frame.dataset.src = embed.trim();
-      painel.appendChild(frame);
-      carregarEmbed(frame);
-    }
+  function urlDocOk(url) {
+    if (httpsOk(url)) return true;
+    if (typeof url !== "string") return false;
+    return /^(docs|data)\/[A-Za-z0-9._-]+$/.test(url.trim());
   }
 
-  function carregarEmbed(frame) {
-    function ativar() {
-      if (frame.getAttribute("src")) return;
-      frame.setAttribute("src", frame.dataset.src);
-    }
-    if (!("IntersectionObserver" in window)) {
-      ativar();
-      return;
-    }
-    var obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        ativar();
-        obs.disconnect();
-      });
-    }, { rootMargin: "240px" });
-    obs.observe(frame);
+  function aplicarLinkForm(id, url) {
+    var btn = document.getElementById(id);
+    if (!btn || !httpsOk(url)) return;
+    btn.setAttribute("href", url.trim());
+  }
+
+  function renderVoluntarios(dados) {
+    var lista = Array.isArray(dados) ? dados : (dados && dados.voluntarios) || [];
+    var ul = document.getElementById("vol-lista");
+    if (!ul) return;
+    ul.textContent = "";
+    lista.forEach(function (v) {
+      if (!v || !v.nome) return;
+      var li = el("li", { class: "vol" });
+      var topo = el("div", { class: "vol-topo" });
+      var nome;
+      if (httpsOk(v.whatsappUrl)) {
+        nome = el("a", {
+          class: "vol-nome",
+          href: v.whatsappUrl.trim(),
+          target: "_blank",
+          rel: "noopener noreferrer"
+        }, v.nome);
+      } else {
+        nome = el("span", { class: "vol-nome" }, v.nome);
+      }
+      topo.appendChild(nome);
+      if (v.papel) topo.appendChild(el("span", { class: "vol-papel" }, v.papel));
+      li.appendChild(topo);
+      if (v.apto) li.appendChild(el("p", { class: "vol-apto" }, "apto " + v.apto));
+      var contatos = el("p", { class: "vol-contatos" });
+      var temContato = false;
+      if (v.whatsapp && httpsOk(v.whatsappUrl)) {
+        temContato = true;
+        contatos.appendChild(el("a", {
+          href: v.whatsappUrl.trim(),
+          target: "_blank",
+          rel: "noopener noreferrer"
+        }, v.whatsapp));
+      }
+      if (emailOk(v.email)) {
+        if (temContato) contatos.appendChild(document.createTextNode(" · "));
+        temContato = true;
+        contatos.appendChild(el("a", { href: "mailto:" + v.email.trim() }, v.email.trim()));
+      }
+      if (temContato) li.appendChild(contatos);
+      ul.appendChild(li);
+    });
   }
 
   function renderConfig(config) {
     config = config || {};
-    montarFormulario(
-      "painel-sugestoes",
-      config.formSugestoesUrl,
-      config.formSugestoesEmbed,
-      "Enviar sugestão",
-      "Formulário de sugestões"
-    );
-    montarFormulario(
-      "painel-indicacao",
-      config.formIndicacaoUrl,
-      config.formIndicacaoEmbed,
-      "Enviar indicação",
-      "Formulário de indicação"
-    );
+    aplicarLinkForm("btn-sugestoes", config.formSugestoesUrl);
+    aplicarLinkForm("btn-indicacao", config.formIndicacaoUrl);
 
     var docs = Array.isArray(config.documentos) ? config.documentos : [];
     var caixa = document.getElementById("docs");
     var aviso = document.getElementById("docs-vazio");
     caixa.textContent = "";
     var publicados = docs.filter(function (doc) {
-      return doc && doc.titulo && httpsOk(doc.url);
+      return doc && doc.titulo && urlDocOk(doc.url);
     });
     aviso.hidden = publicados.length > 0;
     publicados.forEach(function (doc) {
@@ -292,8 +287,19 @@
     });
 
     var contato = config.contato || {};
-    var nome = contato.nome || "Mori";
-    document.getElementById("contato-titulo").textContent = "Fale com " + nome;
+    var nome = contato.nome || "Gustavo Mori";
+    var titulo = document.getElementById("contato-titulo");
+    titulo.textContent = "";
+    titulo.appendChild(document.createTextNode("Fale com "));
+    if (httpsOk(contato.whatsappUrl)) {
+      titulo.appendChild(el("a", {
+        href: contato.whatsappUrl.trim(),
+        target: "_blank",
+        rel: "noopener noreferrer"
+      }, nome));
+    } else {
+      titulo.appendChild(document.createTextNode(nome));
+    }
     var unidade = contato.unidade ? "Morador da unidade " + contato.unidade + ". " : "";
     document.getElementById("contato-texto").textContent = unidade + "Dúvidas sobre a seleção podem ser enviadas diretamente.";
 
@@ -347,8 +353,9 @@
     if (contagem) contagem.textContent = "";
   });
 
-  carregar("data/config.json").then(renderConfig).catch(function () {
-    montarFormulario("painel-sugestoes", "", "", "Enviar sugestão", "");
-    montarFormulario("painel-indicacao", "", "", "Enviar indicação", "");
+  carregar("data/config.json").then(renderConfig).catch(function () {});
+
+  carregar("data/voluntarios.json").then(renderVoluntarios).catch(function () {
+    mostrarErro("erro-voluntarios");
   });
 })();

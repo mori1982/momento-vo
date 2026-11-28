@@ -90,44 +90,35 @@ Arquivo: `data/config.json`
 | Campo | Uso |
 |---|---|
 | `formSugestoesUrl` | Botão **Enviar sugestão**. Use o link curto `https://forms.gle/...` |
-| `formSugestoesEmbed` | Quadro abaixo do botão. É o endereço `src` do Google Forms |
-| `formIndicacaoUrl` | Botão **Enviar indicação** |
-| `formIndicacaoEmbed` | Quadro abaixo do botão de indicação |
+| `formIndicacaoUrl` | Botão **Indicar um síndico**. Use o link curto `https://forms.gle/...` |
 
-O botão é o caminho principal. O quadro incorporado é extra e só é carregado quando a pessoa chega nessa parte da página. O restante do site não fala com o Google.
-
-Enquanto a URL do botão estiver `""`, o botão fica desabilitado com o texto "em breve" e o quadro não aparece.
-
-Para trocar o quadro: no Google Forms, **Enviar** → ícone `< >` → copie só o endereço que está dentro de `src="..."`.
+Cada seção tem só um texto curto e um botão que abre o Google Form em nova aba. Não há iframe nem página incorporada.
 
 ### Documentos
 
-No mesmo `data/config.json`, o campo `documentos` começa vazio. A página mostra "Documentos serão publicados aqui após aprovação".
-
-Quando houver arquivo público (por exemplo um PDF no próprio repositório ou um link `https`):
+No mesmo `data/config.json`, o campo `documentos` lista os arquivos públicos. A URL pode ser um caminho local (`docs/...`) ou um link `https`.
 
 ```json
 "documentos": [
   {
-    "titulo": "Critérios de avaliação",
-    "url": "https://sindico.momento-vo.com.br/docs/criterios.pdf"
+    "titulo": "Questionário de seleção (minuta em aprovação)",
+    "url": "docs/questionario-selecao-sindico.pdf",
+    "texto": "Quem quiser propor perguntas pode usar o formulário de sugestões."
   }
 ]
 ```
 
 ### Contato
 
-Também em `data/config.json`, no objeto `contato`: `nome`, `unidade`, `whatsapp` (texto), `whatsappUrl` (link `https://wa.me/...`) e `email`.
+Também em `data/config.json`, no objeto `contato`: `nome` (use **Gustavo Mori**), `unidade`, `whatsapp` (texto), `whatsappUrl` (link `https://wa.me/...`) e `email`. O nome no site é um link para o WhatsApp.
+
+### Grupo de voluntários
+
+Arquivo: `data/voluntarios.json`. Cada pessoa tem `nome`, `apto` e, se houver, `papel`. Só quem tiver contato público leva `whatsapp`, `whatsappUrl` e `email`.
 
 ## Publicar no GitHub Pages
 
-O workflow `.github/workflows/pages.yml` publica a branch `main` com as actions oficiais do Pages. O arquivo `CNAME` já contém `momento-vo.com.br`.
-
-Na primeira vez:
-
-1. No repositório, **Settings → Pages**.
-2. Em **Build and deployment**, **Source**: **GitHub Actions**.
-3. Confirme que **Actions** está liberado em **Settings → Actions → General** (Allow all actions).
+O site é publicado pelo GitHub Pages em modo legado, a partir da branch `main` na raiz do repositório. O arquivo `CNAME` contém `sindico.momento-vo.com.br`. Não use um workflow do Actions para o deploy: o Pages está no modo legado e o workflow anterior falhava.
 4. Depois do merge na `main`, a execução **Publicar no GitHub Pages** aparece na aba **Actions**.
 5. Em **Settings → Pages**, o domínio personalizado deve ficar `momento-vo.com.br`.
 6. Quando o certificado existir, marque **Enforce HTTPS**.

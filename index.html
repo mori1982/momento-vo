@@ -41,6 +41,7 @@
       <a href="#sugestoes">Sugestões</a>
       <a href="#indicacao">Indicar síndico</a>
       <a href="#documentos">Documentos</a>
+      <a href="#voluntarios">Voluntários</a>
       <a href="#contato">Contato</a>
     </nav>
   </div>
@@ -54,7 +55,7 @@
         <p class="cond">Condomínio Momento Vila Olímpia</p>
         <p class="endereco">Av. Dr. Cardoso de Melo, 585, São Paulo</p>
         <h1>Seleção do novo síndico profissional</h1>
-        <p class="txt">O corpo diretivo atual renunciou e fica até 30/01/2027. Um grupo de moradores voluntários apoia o corpo diretivo na seleção do novo síndico profissional, com critérios e pesos definidos e transparentes. A escolha final é dos condôminos, em assembleia geral extraordinária (AGE).</p>
+        <p class="txt">A síndica e o corpo diretivo atuais renunciaram e ficam até 30/01/2027. Um grupo de moradores voluntários apoia a síndica e o corpo diretivo na seleção do novo síndico profissional, com critérios e pesos definidos e transparentes. A escolha final é dos condôminos, em assembleia geral extraordinária (AGE).</p>
         <div class="acoes">
           <a class="btn btn-pri" href="#candidatos">Ver os candidatos</a>
           <a class="btn btn-sec" href="#sugestoes">Enviar sugestão</a>
@@ -63,7 +64,7 @@
       <div>
         <dl class="conduz">
           <dt>Quem conduz</dt>
-          <dd>Moradores voluntários, em apoio ao corpo diretivo.</dd>
+          <dd>Moradores voluntários, em apoio à síndica e ao corpo diretivo.</dd>
           <dt>Decisão final</dt>
           <dd>Os condôminos, em assembleia geral extraordinária (AGE).</dd>
         </dl>
@@ -112,29 +113,25 @@
   </section>
 
   <section id="sugestoes" class="sec-branca">
-    <div class="wrap form-grid">
-      <div class="form-intro">
-        <p class="eyebrow">Sugestões</p>
-        <div class="regua"></div>
-        <h2>Sua opinião sobre a seleção</h2>
-        <p>Dúvidas, pontos que devem ser avaliados ou qualquer sugestão sobre o processo.</p>
-      </div>
-      <div class="painel" id="painel-sugestoes">
-        <p class="carregando">Carregando…</p>
+    <div class="wrap">
+      <p class="eyebrow">Sugestões</p>
+      <div class="regua"></div>
+      <h2>Sua opinião sobre a seleção</h2>
+      <p class="lead">Dúvidas, pontos que devem ser avaliados ou qualquer sugestão sobre o processo.</p>
+      <div class="acoes">
+        <a class="btn btn-pri" id="btn-sugestoes" href="https://forms.gle/yqsAoXmV6C3SZNgD9" target="_blank" rel="noopener noreferrer">Enviar sugestão</a>
       </div>
     </div>
   </section>
 
   <section id="indicacao">
-    <div class="wrap form-grid">
-      <div class="form-intro">
-        <p class="eyebrow">Indicação</p>
-        <div class="regua"></div>
-        <h2>Indique um síndico profissional</h2>
-        <p>Conhece uma empresa ou um síndico profissional que deveria entrar no levantamento? A indicação não significa aprovação.</p>
-      </div>
-      <div class="painel" id="painel-indicacao">
-        <p class="carregando">Carregando…</p>
+    <div class="wrap">
+      <p class="eyebrow">Indicação</p>
+      <div class="regua"></div>
+      <h2>Indique um síndico profissional</h2>
+      <p class="lead">Conhece uma empresa ou um síndico profissional que deveria entrar no levantamento? A indicação não significa aprovação.</p>
+      <div class="acoes">
+        <a class="btn btn-pri" id="btn-indicacao" href="https://forms.gle/rxtTYdXFiLyvtg8bA" target="_blank" rel="noopener noreferrer">Indicar um síndico</a>
       </div>
     </div>
   </section>
@@ -144,8 +141,20 @@
       <p class="eyebrow">Documentos</p>
       <div class="regua"></div>
       <h2>Documentos da seleção</h2>
-      <p class="vazio" id="docs-vazio">Documentos serão publicados aqui após aprovação.</p>
+      <p class="lead">Quem quiser propor perguntas pode usar o <a href="#sugestoes">formulário de sugestões</a>.</p>
+      <p class="vazio" id="docs-vazio" hidden>Nenhum documento publicado no momento.</p>
       <div class="docs" id="docs"></div>
+    </div>
+  </section>
+
+  <section id="voluntarios">
+    <div class="wrap">
+      <p class="eyebrow">Grupo de voluntários</p>
+      <div class="regua"></div>
+      <h2>Quem conduz a seleção</h2>
+      <p class="lead">Moradores voluntários que apoiam a síndica e o corpo diretivo na seleção do novo síndico.</p>
+      <ul class="vol-lista" id="vol-lista"></ul>
+      <p class="erro-dados" id="erro-voluntarios" hidden>Não foi possível carregar o grupo de voluntários. Atualize a página.</p>
     </div>
   </section>
 
@@ -154,7 +163,7 @@
       <div>
         <p class="eyebrow">Contato</p>
         <div class="regua"></div>
-        <h2 id="contato-titulo">Fale com o Mori</h2>
+        <h2 id="contato-titulo">Fale com <a href="https://wa.me/5511948818000" target="_blank" rel="noopener noreferrer">Gustavo Mori</a></h2>
         <p id="contato-texto">Dúvidas sobre a seleção podem ser enviadas diretamente.</p>
         <div class="acoes" id="contato-acoes"></div>
       </div>
@@ -177,7 +186,7 @@
   </div>
 </footer>
 <noscript>
-  <p class="noscript">Ative o JavaScript para carregar o cronograma, a lista e os formulários. O site não usa rastreadores nem cookies.</p>
+  <p class="noscript">Ative o JavaScript para carregar o cronograma, a lista de candidatos, os documentos e o grupo de voluntários. O site não usa rastreadores nem cookies.</p>
 </noscript>
 <script src="site.js"></script>
 </body>
