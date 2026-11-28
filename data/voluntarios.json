@@ -2,27 +2,20 @@
   "voluntarios": [
     {
       "nome": "Gustavo Mori",
-      "apto": "262A",
-      "papel": "Liderança",
-      "whatsapp": "(11) 94881-8000",
-      "whatsappUrl": "https://wa.me/5511948818000"
+      "papel": "Liderança"
     },
     {
       "nome": "Luciana Thuler",
-      "apto": "241A",
       "papel": "Porta-voz"
     },
     {
-      "nome": "Danila Magalhães",
-      "apto": "192A"
+      "nome": "Danila Magalhães"
     },
     {
-      "nome": "Claudine Wowk",
-      "apto": "42B"
+      "nome": "Claudine Wowk"
     },
     {
-      "nome": "Scylla Fucs",
-      "apto": "252B"
+      "nome": "Scylla Fucs"
     }
   ]
 }

@@ -628,49 +628,6 @@ a.vol-nome:hover { color: var(--bronze-escuro); text-decoration: underline; text
   text-transform: uppercase;
   color: var(--bronze-escuro);
 }
-.vol-apto { margin: var(--s2) 0 0; color: var(--cinza); }
-.vol-contatos { margin: var(--s3) 0 0; }
-.vol-contatos a {
-  color: var(--navy);
-  font-weight: 600;
-  text-underline-offset: 3px;
-  display: inline-flex;
-  min-height: var(--alvo);
-  align-items: center;
-}
-
-/* contato */
-.contato { background: var(--navy); color: var(--branco); }
-.contato h2 { color: var(--branco); }
-.contato h2 a {
-  color: var(--bronze-claro);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-.contato h2 a:hover { color: var(--branco); }
-.contato p { color: #E3E6EC; max-width: 620px; margin: 0; }
-.cont-linhas { display: grid; gap: var(--s3); margin: var(--s5) 0 0; }
-.cont-linhas div { border-top: 1px solid var(--navy-line); padding-top: var(--s3); }
-.cont-linhas dt {
-  font-size: var(--t-legenda);
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--bronze);
-  font-weight: 700;
-}
-.cont-linhas dd { margin: var(--s1) 0 0; color: var(--branco); }
-.cont-linhas a {
-  color: var(--bronze-claro);
-  text-underline-offset: 3px;
-  display: inline-flex;
-  align-items: center;
-  min-height: var(--alvo);
-}
-@media (min-width: 900px) {
-  .cont-grid { display: grid; grid-template-columns: 6fr 6fr; gap: var(--s8); align-items: start; }
-  .cont-linhas { margin-top: 0; }
-}
-
 /* rodapé */
 .rodape { background: #141D30; color: #AEB6C4; font-size: 14px; padding: var(--s6) 0; }
 .rodape .wrap { display: grid; gap: var(--s4); }

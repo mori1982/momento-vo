@@ -110,11 +110,11 @@ No mesmo `data/config.json`, o campo `documentos` lista os arquivos públicos. A
 
 ### Contato
 
-Também em `data/config.json`, no objeto `contato`: `nome` (use **Gustavo Mori**), `unidade`, `whatsapp` (texto) e `whatsappUrl` (link `https://wa.me/...`). O nome no site é um link para o WhatsApp. Não publique e-mail no site.
+Não há seção de contato pessoal no site. Dúvidas e indicações vão pelos formulários de sugestão e de indicação. Não publique telefone, WhatsApp, e-mail nem unidade.
 
 ### Grupo de voluntários
 
-Arquivo: `data/voluntarios.json`. Cada pessoa tem `nome`, `apto` e, se houver, `papel`. Só quem tiver contato público leva `whatsapp` e `whatsappUrl`. A mesma lista aparece no box **Quem conduz** da abertura. Não inclua e-mail.
+Arquivo: `data/voluntarios.json`. Cada pessoa tem `nome` e, se houver, `papel`. A mesma lista aparece no box **Quem conduz** da abertura. Não inclua telefone, WhatsApp, e-mail nem unidade.
 
 ## Publicar no GitHub Pages
 

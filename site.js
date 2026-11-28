@@ -209,13 +209,6 @@
     btn.setAttribute("href", url.trim());
   }
 
-  function metaPessoa(v) {
-    var partes = [];
-    if (v.apto) partes.push("apto " + v.apto);
-    if (v.papel) partes.push(v.papel);
-    return partes.join(", ");
-  }
-
   function renderListaConduz(lista) {
     var ul = document.getElementById("lista-conduz");
     if (!ul) return;
@@ -223,25 +216,7 @@
     lista.forEach(function (v) {
       if (!v || !v.nome) return;
       var li = el("li");
-      if (httpsOk(v.whatsappUrl)) {
-        li.appendChild(el("a", {
-          href: v.whatsappUrl.trim(),
-          target: "_blank",
-          rel: "noopener noreferrer"
-        }, v.nome));
-      } else {
-        li.appendChild(document.createTextNode(v.nome));
-      }
-      var meta = metaPessoa(v);
-      if (meta) li.appendChild(document.createTextNode(", " + meta));
-      if (v.whatsapp && httpsOk(v.whatsappUrl)) {
-        li.appendChild(document.createTextNode(", "));
-        li.appendChild(el("a", {
-          href: v.whatsappUrl.trim(),
-          target: "_blank",
-          rel: "noopener noreferrer"
-        }, v.whatsapp));
-      }
+      li.appendChild(document.createTextNode(v.papel ? v.nome + ", " + v.papel : v.nome));
       ul.appendChild(li);
     });
   }
@@ -256,30 +231,9 @@
       if (!v || !v.nome) return;
       var li = el("li", { class: "vol" });
       var topo = el("div", { class: "vol-topo" });
-      var nome;
-      if (httpsOk(v.whatsappUrl)) {
-        nome = el("a", {
-          class: "vol-nome",
-          href: v.whatsappUrl.trim(),
-          target: "_blank",
-          rel: "noopener noreferrer"
-        }, v.nome);
-      } else {
-        nome = el("span", { class: "vol-nome" }, v.nome);
-      }
-      topo.appendChild(nome);
+      topo.appendChild(el("span", { class: "vol-nome" }, v.nome));
       if (v.papel) topo.appendChild(el("span", { class: "vol-papel" }, v.papel));
       li.appendChild(topo);
-      if (v.apto) li.appendChild(el("p", { class: "vol-apto" }, "apto " + v.apto));
-      if (v.whatsapp && httpsOk(v.whatsappUrl)) {
-        var contatos = el("p", { class: "vol-contatos" });
-        contatos.appendChild(el("a", {
-          href: v.whatsappUrl.trim(),
-          target: "_blank",
-          rel: "noopener noreferrer"
-        }, v.whatsapp));
-        li.appendChild(contatos);
-      }
       ul.appendChild(li);
     });
   }
@@ -313,51 +267,6 @@
       caixa.appendChild(link);
     });
 
-    var contato = config.contato || {};
-    var nome = contato.nome || "Gustavo Mori";
-    var titulo = document.getElementById("contato-titulo");
-    titulo.textContent = "";
-    titulo.appendChild(document.createTextNode("Fale com "));
-    if (httpsOk(contato.whatsappUrl)) {
-      titulo.appendChild(el("a", {
-        href: contato.whatsappUrl.trim(),
-        target: "_blank",
-        rel: "noopener noreferrer"
-      }, nome));
-    } else {
-      titulo.appendChild(document.createTextNode(nome));
-    }
-    var unidade = contato.unidade ? "Morador da unidade " + contato.unidade + ". " : "";
-    document.getElementById("contato-texto").textContent = unidade + "Dúvidas sobre a seleção podem ser enviadas diretamente.";
-
-    var acoes = document.getElementById("contato-acoes");
-    var linhas = document.getElementById("contato-dados");
-    acoes.textContent = "";
-    linhas.textContent = "";
-
-    if (httpsOk(contato.whatsappUrl)) {
-      acoes.appendChild(el("a", {
-        class: "btn btn-pri",
-        href: contato.whatsappUrl.trim(),
-        target: "_blank",
-        rel: "noopener noreferrer"
-      }, "Conversar no WhatsApp"));
-    }
-    function linha(rotulo, valor, href) {
-      if (!valor) return;
-      var grupo = el("div");
-      grupo.appendChild(el("dt", null, rotulo));
-      var dd = el("dd");
-      if (href) dd.appendChild(el("a", { href: href }, valor));
-      else dd.textContent = valor;
-      grupo.appendChild(dd);
-      linhas.appendChild(grupo);
-    }
-
-    if (httpsOk(contato.whatsappUrl)) {
-      linha("WhatsApp", contato.whatsapp || contato.whatsappUrl, contato.whatsappUrl.trim());
-    }
-    linha("Unidade", contato.unidade || "", "");
   }
 
   carregar("data/cronograma.json").then(renderCronograma).catch(function () {
